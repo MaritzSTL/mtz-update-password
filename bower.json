@@ -3,7 +3,10 @@
   "description": "Takes a password in from the user and validates it against a set of requirements.",
   "main": "mtz-update-password.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.4.0",
+    "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#^1.0.6",
+    "iron-validatable-behavior": "PolymerElements/iron-validatable-behavior#^1.1.1",
+    "paper-input": "PolymerElements/paper-input#^1.1.23"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

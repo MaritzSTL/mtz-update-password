@@ -4,14 +4,15 @@
   "main": "mtz-update-password.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
-    "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#^1.0.6",
-    "iron-validatable-behavior": "PolymerElements/iron-validatable-behavior#^1.1.1",
-    "paper-input": "PolymerElements/paper-input#^1.1.23"
+    "paper-input": "PolymerElements/paper-input#^1.1.23",
+    "mtz-utils": "git@bitbucket.org:maritzmotivation/mtz-utils#^0.1",
+    "iron-icon": "PolymerElements/iron-icon#^1.0.12"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
     "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "iron-icons": "PolymerElements/iron-icons#^1.2.0"
   }
 }

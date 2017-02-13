@@ -1,0 +1,85 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<script>
+  // Ensure the namespace exists
+  window.mtz = window.mtz || {};
+
+  /**
+   * Use `mtz.ValidationStatusBehavior` to implement a custom template for showing validations messages.
+   *
+   * @polymerBehavior mtz.ValidationStatusBehavior
+   */
+  mtz.ValidationStatusBehavior = {
+    properties: {
+      /* The error status */
+      errors: {
+        type: Object,
+        value: () => ({})
+      },
+      /* The icon to display when the message fails validation */
+      invalidIcon: {
+        type: String,
+        value: 'icons:highlight-off'
+      },
+      /**
+       * The array of messages to display bound to error status. Each item contains the following properties:
+       *  key: String - The key to lookup error status from errors
+       *  message: String - The message to display, allows for variables with ${} syntax
+       */
+      messages: {
+        type: Array,
+        value: () => []
+      },
+      /* The icon to display when the message passes validation */
+      validIcon: {
+        type: String,
+        value: 'icons:check-circle'
+      },
+      /* The key-value pairs of values to replace in the message strings */
+      values: {
+        type: Object,
+        value: () => ({})
+      }
+    },
+    /**
+     * Takes the message and replaces all variables, annoted by ${}, and replaces them with the value from values.
+     *  Does nothing with the variable if no value is found for it.
+     *
+     * @private
+     * @param {String} message
+     * @param {Object} values
+     * @returns {String}
+     */
+    _getMessage(message, values) {
+      return (message || '').replace(/(\${[^\${}]*})/g, (match, value) => {
+        const key = value.replace(/[\${}]/g, '');
+        return values[key] || value;
+      });
+    },
+    /**
+     * Uses _isInvalid to check validity of the key against errors, then returns validIcon or invalidIcon based on
+     *  the invalid status.
+     *
+     * @private
+     * @param {String} key
+     * @param {String} validIcon
+     * @param {String} invalidIcon
+     * @param {Object} errors
+     * @returns {String}
+     */
+    _getStatusIcon(key, validIcon, invalidIcon, errors) {
+      return this._isInvalid(key, errors) ? invalidIcon : validIcon;
+    },
+    /**
+     * Returns whether or not the key is valid, determined by errors object.
+     *
+     * @private
+     * @param {String} key
+     * @param {Object} [errors = {}]
+     * @returns {Boolean}
+     */
+    _isInvalid(key, errors = {}) {
+      return Boolean(errors[key]);
+    }
+  };
+</script>

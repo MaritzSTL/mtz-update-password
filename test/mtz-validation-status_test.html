@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>mtz-update-password test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../mtz-validation-status.html">
+  </head>
+  <body>
+    <test-fixture id="basic">
+      <template>
+        <mtz-validation-status></mtz-validation-status>
+      </template>
+    </test-fixture>
+
+    <script>
+      describe('mtz-validation-status', () => {
+        let element;
+
+        beforeEach(() => element = fixture('basic'));
+
+        describe('_getMessage(message, values)', () => {
+          const message = '${foo} should ${bar}';
+
+          it('should not alter a message with no variables', () =>
+            expect(element._getMessage('foo', {})).to.equal('foo'));
+          it('should return variables unaltered when there is no value', () =>
+            expect(element._getMessage(message, {})).to.equal(message));
+          it('should replace the variables when there is a value provided', () =>
+            expect(element._getMessage(message, {foo: 'a', bar: 'b'})).to.equal('a should b'));
+        });
+        describe('_getStatusIcon(key, validIcon, invalidIcon, errors)', () => {
+          const errors = {foo: true},
+            invalidIcon = 'invalid',
+            key = 'foo',
+            validIcon = 'valid';
+
+          beforeEach(() => element._isInvalid = sinon.stub());
+
+          it('should call _isInvalid', () => {
+            element._getStatusIcon(key, validIcon, invalidIcon, errors);
+            expect(element._isInvalid.calledOnce).to.equal(true);
+          });
+          it('should return validIcon when _isInvalid returns false', () => {
+            element._isInvalid.returns(false);
+            expect(element._getStatusIcon(key, validIcon, invalidIcon, errors)).
+              to.equal(validIcon);
+          });
+          it('should return invalidIcon when _isInvalid returns true', () => {
+            element._isInvalid.returns(true);
+            expect(element._getStatusIcon(key, validIcon, invalidIcon, errors)).
+              to.equal(invalidIcon);
+          });
+        });
+        describe('_isInvalid(key, errors)', () => {
+          it('should return the value stored in errors for the key', () => {
+            expect(element._isInvalid('foo', {foo: true})).to.equal(true);
+            expect(element._isInvalid('foo', {foo: false})).to.equal(false);
+          });
+          it('should return false when there is no value stored for the key', () =>
+            expect(element._isInvalid('foo')).to.equal(false));
+        });
+      });
+    </script>
+  </body>
+</html>

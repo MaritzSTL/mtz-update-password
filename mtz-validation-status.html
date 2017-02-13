@@ -1,0 +1,81 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="mtz-validation-status-behavior.html">
+
+<!--
+`mtz-validation-status` Takes an array of validation messages, looks up their error status in the errors object, then
+  displays the corresponding validation status message.
+
+### Styling
+Custom property | Description | Default
+----------------|-------------|----------
+`--mtz-validation-status` | A mixin for styling this element | {}
+`--mtz-validation-status-item` | A mixin for styling each status item | {}
+`--mtz-validation-status-message` | A mixin for styling the message | {}
+`--mtz-validation-status-message-color` | Allows changing the message color | `--secondary-text-color`
+`--mtz-validation-status-valid-message` | A mixin for styling a valid status message | {}
+`--mtz-validation-status-invalid-message` | A mixin for styling an invalid status message | {}
+`--mtz-validation-status-icon` | A mixin for styling the icon | {}
+`--mtz-validation-status-icon-size` | Allows changing the icon size | 15px
+`--mtz-validation-status-valid-icon` | A mixin for styling valid icons | {}
+`--mtz-validation-status-valid-icon-color` | Allows changing the color for valid icons | `green`
+`--mtz-validation-status-invalid-icon` | A mixin for styling invalid icons | {}
+`--mtz-validation-status-invalid-icon-color` | Allows changing the color for invalid icons | `--secondary-text-color`
+
+@demo demo/index.html
+-->
+<dom-module id="mtz-validation-status">
+  <template>
+    <style>
+      :host {
+        @apply --mtz-validation-status;
+      }
+      .item {
+        @apply --mtz-validation-status-item;
+      }
+      .message {
+        font-size: 0.688rem;
+        color: var(--mtz-validation-status-message-color, var(--secondary-text-color));
+        @apply --mtz-validation-status-message;
+      }
+      .item:not([invalid]) > .message {
+        @apply --mtz-validation-status-valid-message;
+      }
+      .item[invalid] > .message {
+        @apply --mtz-validation-status-invalid-message;
+      }
+      .icon {
+        height: var(--mtz-validation-status-icon-size, 15px);
+        width: var(--mtz-validation-status-icon-size, 15px);
+        @apply --mtz-validation-status-icon;
+      }
+      .item:not([invalid]) > .icon {
+        color: var(--mtz-validation-status-valid-icon-color, green);
+        @apply --mtz-validation-status-valid-icon;
+      }
+      .item[invalid] > .icon {
+        color: var(--mtz-validation-status-invalid-icon-color, var(--secondary-text-color));
+        @apply --mtz-validation-status-invalid-icon;
+      }
+    </style>
+
+    <template
+      is="dom-repeat"
+      items="[[messages]]">
+      <div
+        class="item"
+        invalid$="[[_isInvalid(item.key, errors, errors.*)]]">
+        <iron-icon
+          class="icon"
+          icon="[[_getStatusIcon(item.key, validIcon, invalidIcon, errors, errors.*)]]"
+        ></iron-icon>
+        <span class="message">[[_getMessage(item.message, values, values.*)]]</span>
+      </div>
+    </template>
+  </template>
+  <script>
+    Polymer({
+      is: 'mtz-validation-status',
+      behaviors: [mtz.ValidationStatusBehavior]
+    });
+  </script>
+</dom-module>

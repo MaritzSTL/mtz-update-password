@@ -5,7 +5,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
     "paper-input": "PolymerElements/paper-input#^1.1.23",
-    "mtz-utils": "git@bitbucket.org:maritzmotivation/mtz-utils#^0.2",
+    "mtz-utils": "git@bitbucket.org:maritzmotivation/mtz-utils#^0.3.0",
     "iron-icon": "PolymerElements/iron-icon#^1.0.12"
   },
   "devDependencies": {

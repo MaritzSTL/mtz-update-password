@@ -14,12 +14,14 @@
       /* The error status */
       errors: {
         type: Object,
-        value: () => ({})
+        value() {
+          return {};
+        },
       },
       /* The icon to display when the message fails validation */
       invalidIcon: {
         type: String,
-        value: 'icons:highlight-off'
+        value: 'icons:highlight-off',
       },
       /**
        * The array of messages to display bound to error status. Each item contains the following properties:
@@ -28,27 +30,31 @@
        */
       messages: {
         type: Array,
-        value: () => []
+        value() {
+          return [];
+        },
       },
       /* The icon to display when the message passes validation */
       validIcon: {
         type: String,
-        value: 'icons:check-circle'
+        value: 'icons:check-circle',
       },
       /* The key-value pairs of values to replace in the message strings */
       values: {
         type: Object,
-        value: () => ({})
-      }
+        value() {
+          return {};
+        },
+      },
     },
     /**
      * Takes the message and replaces all variables, annoted by ${}, and replaces them with the value from values.
      *  Does nothing with the variable if no value is found for it.
      *
-     * @private
+     * @protected
      * @param {String} message
      * @param {Object} values
-     * @returns {String}
+     * @return {String}
      */
     _getMessage(message, values) {
       return (message || '').replace(/(\${[^\${}]*})/g, (match, value) => {
@@ -60,12 +66,12 @@
      * Uses _isInvalid to check validity of the key against errors, then returns validIcon or invalidIcon based on
      *  the invalid status.
      *
-     * @private
+     * @protected
      * @param {String} key
      * @param {String} validIcon
      * @param {String} invalidIcon
      * @param {Object} errors
-     * @returns {String}
+     * @return {String}
      */
     _getStatusIcon(key, validIcon, invalidIcon, errors) {
       return this._isInvalid(key, errors) ? invalidIcon : validIcon;
@@ -73,13 +79,13 @@
     /**
      * Returns whether or not the key is valid, determined by errors object.
      *
-     * @private
+     * @protected
      * @param {String} key
      * @param {Object} [errors = {}]
-     * @returns {Boolean}
+     * @return {Boolean}
      */
     _isInvalid(key, errors = {}) {
       return Boolean(errors[key]);
-    }
+    },
   };
 </script>

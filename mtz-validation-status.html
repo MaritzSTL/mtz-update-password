@@ -17,7 +17,7 @@ Custom property | Description | Default
 `--mtz-validation-status-icon` | A mixin for styling the icon | {}
 `--mtz-validation-status-icon-size` | Allows changing the icon size | 15px
 `--mtz-validation-status-valid-icon` | A mixin for styling valid icons | {}
-`--mtz-validation-status-valid-icon-color` | Allows changing the color for valid icons | `green`
+`--mtz-validation-status-valid-icon-color` | Allows changing the color for valid icons | `var(--success-color, #008000)`
 `--mtz-validation-status-invalid-icon` | A mixin for styling invalid icons | {}
 `--mtz-validation-status-invalid-icon-color` | Allows changing the color for invalid icons | `--secondary-text-color`
 
@@ -49,7 +49,7 @@ Custom property | Description | Default
         @apply --mtz-validation-status-icon;
       }
       .item:not([invalid]) > .icon {
-        color: var(--mtz-validation-status-valid-icon-color, green);
+        color: var(--mtz-validation-status-valid-icon-color, var(--success-color, #008000));
         @apply --mtz-validation-status-valid-icon;
       }
       .item[invalid] > .icon {
@@ -75,7 +75,7 @@ Custom property | Description | Default
   <script>
     Polymer({
       is: 'mtz-validation-status',
-      behaviors: [mtz.ValidationStatusBehavior]
+      behaviors: [mtz.ValidationStatusBehavior],
     });
   </script>
 </dom-module>

@@ -1,6 +1,29 @@
+[![Build Status](https://img.shields.io/travis/MaritzSTL/mtz-update-password/master.svg?style=flat-square)](https://travis-ci.org/MaritzSTL/mtz-update-password)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/MaritzSTL/mtz-update-password)
+
 # \<mtz-update-password\>
 
 Takes a password in from the user and validates it against a set of requirements.
+
+<!--
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="mtz-update-password.html">
+
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<mtz-update-password
+  min-symbols="2"
+  min-upper="2"
+  auto-validate
+></mtz-update-password>
+```
 
 ## Install the Polymer-CLI
 

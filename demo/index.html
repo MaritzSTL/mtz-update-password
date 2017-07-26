@@ -13,8 +13,9 @@
     <link rel="import" href="../../iron-icons/iron-icons.html">
     <link rel="import" href="../mtz-update-password.html">
 
-    <style is="custom-style" include="demo-pages-shared-styles">
-    </style>
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles"></style>
+    </custom-style>
   </head>
   <body>
     <div class="vertical-section-container centered">
@@ -22,8 +23,9 @@
       <demo-snippet>
         <template>
           <mtz-update-password
-            min-symbols=2
-            min-upper=2
+            min-symbols="2"
+            min-upper="2"
+            auto-validate
           ></mtz-update-password>
         </template>
       </demo-snippet>

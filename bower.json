@@ -3,16 +3,41 @@
   "description": "Takes a password in from the user and validates it against a set of requirements.",
   "main": "mtz-update-password.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0",
-    "paper-input": "PolymerElements/paper-input#^1.1.23",
-    "mtz-utils": "git@bitbucket.org:maritzmotivation/mtz-utils#^0.3.0",
-    "iron-icon": "PolymerElements/iron-icon#^1.0.12"
+    "iron-icon": "PolymerElements/iron-icon#^1.0 || ^2.0",
+    "iron-validatable-behavior": "PolymerElements/iron-validatable-behavior#^1.0 || ^2.0",
+    "iron-validator-behavior": "PolymerElements/iron-validator-behavior#^1.0 || ^2.0",
+    "paper-input": "PolymerElements/paper-input#^1.0 || ^2.0",
+    "polymer": "Polymer/polymer#^1.9 || ^2.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
-    "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
-    "iron-icons": "PolymerElements/iron-icons#^1.2.0"
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0 || ^2.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0 || ^2.0",
+    "iron-icons": "PolymerElements/iron-icons#^1.0 || ^2.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "variants": {
+    "1.x": {
+      "dependencies": {
+        "iron-icon": "PolymerElements/iron-icon#^1.0.12",
+        "iron-validatable-behavior": "PolymerElements/iron-validatable-behavior#^1.1.2",
+        "iron-validator-behavior": "PolymerElements/iron-validator-behavior#1.0",
+        "paper-input": "PolymerElements/paper-input#^1.1.23",
+        "polymer": "Polymer/polymer#^1.9.0"
+      },
+      "devDependencies": {
+        "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+        "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+        "iron-icons": "PolymerElements/iron-icons#^1.2.0",
+        "web-component-tester": "Polymer/web-component-tester#^5.0.0",
+        "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+      },
+      "resolutions": {
+        "webcomponentsjs": "^0.7.0"
+      }
+    }
+  },
+  "resolutions": {
+    "webcomponentsjs": "^1.0.0"
   }
 }

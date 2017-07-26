@@ -35,10 +35,10 @@
             expect(element._getMessage(message, {foo: 'a', bar: 'b'})).to.equal('a should b'));
         });
         describe('_getStatusIcon(key, validIcon, invalidIcon, errors)', () => {
-          const errors = {foo: true},
-            invalidIcon = 'invalid',
-            key = 'foo',
-            validIcon = 'valid';
+          const errors = {foo: true};
+          const invalidIcon = 'invalid';
+          const key = 'foo';
+          const validIcon = 'valid';
 
           beforeEach(() => element._isInvalid = sinon.stub());
 

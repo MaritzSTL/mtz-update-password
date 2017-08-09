@@ -10,7 +10,7 @@ addons:
   chrome: stable
 install:
   - npm install -g polymer-cli
-  - polymer install
+  - polymer install --variants
 before_script:
   - polymer lint --input *.html
 script:

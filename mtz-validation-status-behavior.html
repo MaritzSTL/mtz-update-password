@@ -57,10 +57,16 @@
      * @return {String}
      */
     _getMessage(message, values) {
-      return (message || '').replace(/(\${[^\${}]*})/g, (match, value) => {
+      let dropMessage = false;
+      message = (message || '').replace(/(\${[^\${}]*})/g, (match, value) => {
         const key = value.replace(/[\${}]/g, '');
-        return values[key] || value;
+        const str = values[key];
+        if (!str) {
+          dropMessage = true;
+        }
+        return str;
       });
+      return dropMessage ? '' : message;
     },
     /**
      * Uses _isInvalid to check validity of the key against errors, then returns validIcon or invalidIcon based on

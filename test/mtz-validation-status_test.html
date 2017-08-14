@@ -29,8 +29,8 @@
 
           it('should not alter a message with no variables', () =>
             expect(element._getMessage('foo', {})).to.equal('foo'));
-          it('should return variables unaltered when there is no value', () =>
-            expect(element._getMessage(message, {})).to.equal(message));
+          it('should return an empty string when there are missing values', () =>
+            expect(element._getMessage(message, {})).to.equal(''));
           it('should replace the variables when there is a value provided', () =>
             expect(element._getMessage(message, {foo: 'a', bar: 'b'})).to.equal('a should b'));
         });

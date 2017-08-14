@@ -63,15 +63,19 @@ Custom property | Description | Default
     <template
       is="dom-repeat"
       items="[[messages]]">
-      <div
-        class="item"
-        invalid$="[[_isInvalid(item.key, errors, errors.*)]]">
-        <iron-icon
-          class="icon"
-          icon="[[_getStatusIcon(item.key, validIcon, invalidIcon, errors, errors.*)]]"
-        ></iron-icon>
-        <span class="message">[[_getMessage(item.message, values, values.*)]]</span>
-      </div>
+      <template
+        is="dom-if"
+        if="[[_getMessage(item.message, values, values.*)]]">
+        <div
+          class="item"
+          invalid$="[[_isInvalid(item.key, errors, errors.*)]]">
+          <iron-icon
+            class="icon"
+            icon="[[_getStatusIcon(item.key, validIcon, invalidIcon, errors, errors.*)]]"
+          ></iron-icon>
+          <span class="message">[[_getMessage(item.message, values, values.*)]]</span>
+        </div>
+      </template>
     </template>
   </template>
   <script>

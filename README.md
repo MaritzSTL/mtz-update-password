@@ -10,6 +10,7 @@ Takes a password in from the user and validates it against a set of requirements
 <custom-element-demo>
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../iron-icons/iron-icons.html">
     <link rel="import" href="mtz-update-password.html">
 
     <next-code-block></next-code-block>

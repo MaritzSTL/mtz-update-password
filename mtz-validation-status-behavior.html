@@ -60,11 +60,12 @@
       let dropMessage = false;
       message = (message || '').replace(/(\${[^\${}]*})/g, (match, value) => {
         const key = value.replace(/[\${}]/g, '');
-        const str = values[key];
-        if (!str) {
+        const val = values[key];
+        // Drop limits that have an infinity bounding
+        if (!val || val === Infinity) {
           dropMessage = true;
         }
-        return str;
+        return val;
       });
       return dropMessage ? '' : message;
     },

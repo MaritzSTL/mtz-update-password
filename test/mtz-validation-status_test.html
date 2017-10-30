@@ -27,12 +27,18 @@
         describe('_getMessage(message, values)', () => {
           const message = '${foo} should ${bar}';
 
-          it('should not alter a message with no variables', () =>
-            expect(element._getMessage('foo', {})).to.equal('foo'));
-          it('should return an empty string when there are missing values', () =>
-            expect(element._getMessage(message, {})).to.equal(''));
-          it('should replace the variables when there is a value provided', () =>
-            expect(element._getMessage(message, {foo: 'a', bar: 'b'})).to.equal('a should b'));
+          it('should not alter a message with no variables', () => {
+            expect(element._getMessage('foo', {})).to.equal('foo');
+          });
+          it('should return an empty string when there are missing values', () => {
+            expect(element._getMessage(message, {})).to.equal('');
+          });
+          it('should replace the variables when there is a value provided', () => {
+            expect(element._getMessage(message, {foo: 'a', bar: 'b'})).to.equal('a should b');
+          });
+          it('should return an emptry string when the value is bounded by infinity', () => {
+            expect(element._getMessage(message, {foo: Infinity, bar: 'b'})).to.equal('');
+          });
         });
         describe('_getStatusIcon(key, validIcon, invalidIcon, errors)', () => {
           const errors = {foo: true};

@@ -5,6 +5,8 @@
 
 Takes a password in from the user and validates it against a set of requirements.
 
+The component was featured on Vaadin's blog: [Check it out](https://vaadin.com/blog/top-five-web-components-for-password-inp-1) :tada:
+
 <!--
 ```
 <custom-element-demo>

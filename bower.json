@@ -9,6 +9,7 @@
     "paper-input": "PolymerElements/paper-input#^1.0 || ^2.0",
     "polymer": "Polymer/polymer#^1.9 || ^2.0",
     "zxcvbn": "dropbox/zxcvbn#^4.4.2",
+    "lazy-imports": "Polymer/lazy-imports#^2.0.0",
     "paper-progress": "PolymerElements/paper-progress#^2.1.1"
   },
   "devDependencies": {
@@ -25,6 +26,8 @@
         "iron-validatable-behavior": "PolymerElements/iron-validatable-behavior#^1.1.2",
         "iron-validator-behavior": "PolymerElements/iron-validator-behavior#1.0",
         "paper-input": "PolymerElements/paper-input#^1.1.23",
+        "lazy-imports": "Polymer/lazy-imports#^2.0.0",
+        "zxcvbn": "dropbox/zxcvbn#^4.4.2",
         "polymer": "Polymer/polymer#^1.9.0"
       },
       "devDependencies": {

@@ -10,12 +10,13 @@
     "polymer": "Polymer/polymer#^1.9 || ^2.0",
     "zxcvbn": "dropbox/zxcvbn#^4.4.2",
     "lazy-imports": "Polymer/lazy-imports#^2.0.0",
-    "paper-progress": "PolymerElements/paper-progress#^2.1.1"
+    "toggle-icon": "fxedel/toggle-icon#^2.0.0"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0 || ^2.0",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0 || ^2.0",
     "iron-icons": "PolymerElements/iron-icons#^1.0 || ^2.0",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#1 - 2",
     "web-component-tester": "Polymer/web-component-tester#^6.0.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
   },
@@ -34,6 +35,7 @@
         "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
         "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
         "iron-icons": "PolymerElements/iron-icons#^1.2.0",
+        "iron-test-helpers": "PolymerElements/iron-test-helpers#^1.0.0",
         "web-component-tester": "Polymer/web-component-tester#^5.0.0",
         "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
       },

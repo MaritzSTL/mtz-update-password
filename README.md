@@ -1,5 +1,8 @@
 [![Build Status](https://img.shields.io/travis/MaritzSTL/mtz-update-password/master.svg?style=flat-square)](https://travis-ci.org/MaritzSTL/mtz-update-password)
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/MaritzSTL/mtz-update-password)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/MaritzSTL/mtz-update-password)  
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg?style=flat-square)](https://vaadin.com/directory/component/maritzstlmtz-update-password)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/maritzstlmtz-update-password.svg?style=flat-square)](https://vaadin.com/directory/component/maritzstlmtz-update-password)
+
 
 # \<mtz-update-password\>
 

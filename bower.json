@@ -29,7 +29,8 @@
         "paper-input": "PolymerElements/paper-input#^1.1.23",
         "lazy-imports": "Polymer/lazy-imports#^2.0.0",
         "zxcvbn": "dropbox/zxcvbn#^4.4.2",
-        "polymer": "Polymer/polymer#^1.9.0"
+        "polymer": "Polymer/polymer#^1.9.0",
+        "toggle-icon": "fxedel/toggle-icon#^1.4.0"
       },
       "devDependencies": {
         "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

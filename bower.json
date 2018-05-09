@@ -41,7 +41,15 @@
         "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
       },
       "resolutions": {
-        "webcomponentsjs": "^0.7.0"
+        "webcomponentsjs": "^0.7.0",
+        "paper-styles": "^1.0.0",
+        "iron-checked-element-behavior": "^1.0.0",
+        "paper-behaviors": "^1.0.0",
+        "paper-icon-button": "^1.0.0",
+        "hydrolysis": "^1.18",
+        "iron-location": "^0.8.0",
+        "test-fixture": "^1.0.0",
+        "polymer": "^1.9.0"
       }
     }
   },
